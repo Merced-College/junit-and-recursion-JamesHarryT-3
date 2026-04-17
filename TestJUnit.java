@@ -1,3 +1,12 @@
+/*
+Name: Harrison Tinley
+Date: 4/17/2026
+
+Class Name: TestJUnit
+Description:
+
+*/
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -107,5 +116,32 @@ public class TestJUnit {
     @Test
     public void testStrCount_5() {
         assertEquals(6, TestingRecursion.strCount("hahahahahaha", "ha"));
+    }
+
+    // stringClean tests
+
+    @Test
+    public void test_stringClean_1() {
+        assertEquals("james_T", TestingRecursion.stringClean("jjaammeess__TT"));
+    }
+
+    @Test
+    public void test_stringClean_2() {
+        assertEquals("a", TestingRecursion.stringClean("aaaa"));
+    }
+
+    @Test
+    public void test_stringClean_3() {
+        assertEquals("", TestingRecursion.stringClean(""));
+    }
+
+    @Test
+    public void test_stringClean_4() {
+        assertEquals("helo", TestingRecursion.stringClean("hello"));
+    }
+
+    @Test
+    public void test_stringClean_5() {
+        assertEquals("abaxzxz", TestingRecursion.stringClean("aaaaaaaaaaaaaaaaaaaaaabbaaaaxzxz"));
     }
 }

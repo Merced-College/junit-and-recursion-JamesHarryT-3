@@ -3,6 +3,7 @@ Name: Harrison Tinley
 Date: 4/16/2026
 
 Class Name: TestingRecursion
+Description:
 */
 
 public class TestingRecursion {
@@ -90,13 +91,24 @@ public class TestingRecursion {
     } // end of strCount method
 
     public static String stringClean(String str) {
-        return "Test working";
+        // base case
+        if (str.length() <= 1) {
+            return str; //finish searching, it got to the end or to the last char
+        }
+
+        if (str.charAt(1) != str.charAt(0)) { // if the next char is unique, return it and then move forward
+            return str.charAt(0) + stringClean(str.substring(1));
+        }
+        // the char is the same so just move forward.
+        return stringClean(str.substring(1));
+
     } //end of stringClean method
 
     public static void main(String[] args) {
         //System.out.println(strCount("cowcatcat", "cat"));
         //System.out.println(countHi2("xhiahi"));
-        System.out.println(countHi("hihihihi"));
+        //System.out.println(countHi("hihihihi"));
+        System.out.println(stringClean("aaaaaaaaaaabbbbbcxcccccccccc"));
     } //end of main method
 
 }
