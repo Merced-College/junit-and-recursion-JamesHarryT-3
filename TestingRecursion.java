@@ -40,11 +40,28 @@ public class TestingRecursion {
 
     public static int countHi(String str) {
         return 1;
-    }
+    } //end of countHi2 method
 
     public static int countHi2(String str) {
-        return 1;
-    }
+        //base case
+        if (str.length() < 2) { //nothing more to check, "hi" can't be there so finish
+            return 0;    
+        }
+
+        // check for "xhi" first and then if it's found skip it so it doesn't count
+        if (str.length() >= 3 && str.substring(0, 3).equals("xhi")) {
+            return countHi2(str.substring(3));
+        }
+
+        // check for "hi" and increase the count if found
+        if (str.substring(0, 2).equals("hi")) {
+            return 1 + countHi2(str.substring(2)); // skips ahead 2 characters
+        }
+        
+        // if nothing is found just move forward 1 character
+        return countHi2(str.substring(1));
+
+    } //end of countHi2 method
     
     public static int strCount(String str, String sub) {
         //base case
@@ -52,20 +69,21 @@ public class TestingRecursion {
             return 0;
         }
 
-        if (str.substring(0, sub.length()).equals(sub)) {
+        if (str.substring(0, sub.length()).equals(sub)) { //checks if string starts with sub
             return 1 + strCount(str.substring(sub.length()), sub);
         }
-        else {
+        else { // doesn't start with sub so moves forward one letter and checks everything again
             return strCount(str.substring(1), sub);
         }
     } // end of strCount method
 
     public static String stringClean(String str) {
         return "Test working";
-    }
+    } //end of stringClean method
 
     public static void main(String[] args) {
-        System.out.println(strCount("cowcatcat", "cat"));
-    }
+        //System.out.println(strCount("cowcatcat", "cat"));
+        System.out.println(countHi2("xhiahi"));
+    } //end of main method
 
 }
