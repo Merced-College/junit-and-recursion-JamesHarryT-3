@@ -3,7 +3,7 @@ Name: Harrison Tinley
 Date: 4/17/2026
 
 Class Name: TestJUnit
-Description:
+Description: this is where all the methods from the TestingRecursion class are tested using JUnit
 
 */
 
