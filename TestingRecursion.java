@@ -38,8 +38,20 @@ public class TestingRecursion {
         }
     } //end count8 method
 
+    // did countHi2 first, so basically same logic as that but don't need to check for "xhi"
     public static int countHi(String str) {
-        return 1;
+        //base case
+        if (str.length() < 2) { //nothing more to check, "hi" can't be there so finish
+            return 0;    
+        }
+
+        // check for "hi" and increase the count if found
+        if (str.substring(0, 2).equals("hi")) {
+            return 1 + countHi(str.substring(2)); // skips ahead 2 characters
+        }
+        
+        // if nothing is found just move forward 1 character
+        return countHi(str.substring(1));
     } //end of countHi2 method
 
     public static int countHi2(String str) {
@@ -83,7 +95,8 @@ public class TestingRecursion {
 
     public static void main(String[] args) {
         //System.out.println(strCount("cowcatcat", "cat"));
-        System.out.println(countHi2("xhiahi"));
+        //System.out.println(countHi2("xhiahi"));
+        System.out.println(countHi("hihihihi"));
     } //end of main method
 
 }

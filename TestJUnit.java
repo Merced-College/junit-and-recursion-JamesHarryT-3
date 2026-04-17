@@ -31,29 +31,54 @@ public class TestJUnit {
 
     // countHi tests
 
-    // countHi2 tests
     @Test
     public void test_countHi_1() {
-        assertEquals(0, TestingRecursion.countHi2(""));
+        assertEquals(0, TestingRecursion.countHi(""));
     }
 
     @Test
     public void test_countHi_2() {
-        assertEquals(0, TestingRecursion.countHi2("xhixhi"));
+        assertEquals(2, TestingRecursion.countHi("xhixhi"));
     }
 
     @Test
     public void test_countHi_3() {
-        assertEquals(3, TestingRecursion.countHi2("hihihi"));
+        assertEquals(3, TestingRecursion.countHi("hihihi"));
     }
 
     @Test
     public void test_countHi_4() {
-        assertEquals(2, TestingRecursion.countHi2("ahibhi"));
+        assertEquals(2, TestingRecursion.countHi("ahibhi"));
     }
 
     @Test
     public void test_countHi_5() {
+        assertEquals(1, TestingRecursion.countHi("hainhbihi"));
+    }
+
+    // countHi2 tests
+    @Test
+    public void test_countHi2_1() {
+        assertEquals(0, TestingRecursion.countHi2(""));
+    }
+
+    @Test
+    public void test_countHi2_2() {
+        assertEquals(0, TestingRecursion.countHi2("xhixhi"));
+    }
+
+    @Test
+    public void test_countHi2_3() {
+        assertEquals(3, TestingRecursion.countHi2("hihihi"));
+    }
+
+    @Test
+    public void test_countHi2_4() {
+        assertEquals(2, TestingRecursion.countHi2("ahibhi"));
+    }
+
+    @Test
+    public void test_countHi2_5() {
         assertEquals(1, TestingRecursion.countHi2("hainhbihi"));
     }
 
